@@ -24,7 +24,7 @@ abstract class Logger
         return self::log($message, $filename, $prefix);
     }
     
-    public static function error($message, $filename = "logger",$prefix = "INFO") 
+    public static function info($message, $filename = "logger",$prefix = "INFO") 
     {
         return self::log($message, $filename, $prefix);
     }
