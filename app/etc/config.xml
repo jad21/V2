@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <global>
+        <version>1.0</version>
+        <author><![CDATA[Jose Angel Delgado]]></author>
+        <email><![CDATA[esojangel@gmail.com]]></email>
+    </global>
+    <db>
+    	<default>
+    		<![CDATA[test]]>
+    	</default>
+    	<connections>
+    		<test>
+    			<host><![CDATA[localhost]]></host>
+    			<port><![CDATA[3306]]></port>
+    			<username><![CDATA[root]]></username>
+    			<password><![CDATA[1234qwas]]></password>
+    			<dbname><![CDATA[test]]></dbname>		
+    		</test>
+    		<yws>
+    			<host><![CDATA[localhost]]></host>
+    			<port><![CDATA[3306]]></port>
+    			<username><![CDATA[root]]></username>
+    			<password><![CDATA[1234qwas]]></password>
+    			<dbname><![CDATA[yws]]></dbname>		
+    		</yws>
+    	</connections>
+    </db>
+</config>
