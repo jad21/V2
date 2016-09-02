@@ -237,7 +237,7 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
     public function first(callable $callback = null, $default = null)
     {
         if (is_null($callback)) {
-            return count($this->items) > 0 ? reset($this->items) : value($default);
+            return count($this->items) > 0 ? reset($this->items) : $default;
         }
 
         return Arr::first($this->items, $callback, $default);

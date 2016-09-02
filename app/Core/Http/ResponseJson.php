@@ -1,6 +1,6 @@
 <?php
 namespace App\Core\Http;
-
+use Exception;
 class ResponseJson
 {
     /**
@@ -28,6 +28,9 @@ class ResponseJson
     public function toJson()
     {
         header('Content-Type: application/json');
+        if (is_object($this->data) OR is_array($this->data) ) {
+            return json_encode($this->data);
+        }
         if ($this->is_json_valid($this->data)) {
             return json_encode($this->data);
         }
@@ -37,8 +40,12 @@ class ResponseJson
     
     public function is_json_valid($value)
     {
-        json_decode($value);
-        return (json_last_error()===JSON_ERROR_NONE);
+        try {
+            json_decode($value);
+            return (json_last_error()===JSON_ERROR_NONE);
+        } catch (Exception $e) {
+            return false;
+        }
     }
     
     public function __tostring()

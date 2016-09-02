@@ -1,6 +1,6 @@
 <?php
 namespace App\Core\Http;
-
+use App\Core\Views\View;
 class Response
 {
     private $result = "";
@@ -12,11 +12,15 @@ class Response
      */
     public function __construct($data, $format,$code=200)
     {
-        switch ($format) {
-            case 'application/json':
-            default:
-                $this->result = new ResponseJson($data);
-            break;
+        if ($data instanceof View) {
+            return $this->result = $data;
+        }else{
+            switch ($format) {
+                case 'application/json':
+                default:
+                    $this->result = new ResponseJson($data);
+                break;
+            }
         }
         
     }
