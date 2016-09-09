@@ -265,7 +265,7 @@ abstract class CoreModel
                     $_query_filter .= " {$ivalue['operador']} {$this->table}.{$ivalue['key']}{$ivalue['cond']} :b_{$ivalue['key']} ";
                     $paramsWhere["b_{$ivalue['key']}"] = $ivalue['val'];
                 }
-
+                $this->_query_filter = [];
                 $sql .= "UPDATE {$this->table} SET $setFields WHERE 1  $_query_filter;";
 
                 return $this->exec($sql, array_merge($paramsSet, $paramsWhere));

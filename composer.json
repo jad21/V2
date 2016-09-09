@@ -1,5 +1,5 @@
 {
-    "name":"project/v2",
+    "name":"elegancia",
     "description":"project php psr-4",
     "authors": [
         {
@@ -8,7 +8,8 @@
         }
     ],
     "require": {
-    	"php": ">=5.5.9"
+        "php": ">=5.5.9",
+        "symfony/console": "2.7.*"
     },
     "autoload": {
         "psr-4": {
@@ -16,6 +17,7 @@
         },
         "classmap":[],
         "files": [
+            "app/Core/Debug/ErrorHandler.php",
             "app/Core/Utils/helpers.php"
         ]
     },

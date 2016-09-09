@@ -27,8 +27,9 @@ class Api
     private $curl_opts_default = [
         CURLOPT_USERAGENT      => "YAXA-REST-1.0.0",
         CURLOPT_SSL_VERIFYPEER => false,
-        CURLOPT_RETURNTRANSFER => 1,
-        CURLOPT_SSL_VERIFYHOST => 0,
+        CURLOPT_SSL_VERIFYHOST => false,
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
     ];
 
     public function __construct()
@@ -64,7 +65,7 @@ class Api
     }
 
 
-    public function post($methodURl = '', $data = [],$requestType = self::ENCODING_JSON)
+    public function post($methodURl = '', $data = [],$params=[],$requestType = self::ENCODING_JSON)
     {
         $parse_url = parse_url($methodURl);
         if (!isset($parse_url["scheme"])) {
@@ -78,23 +79,19 @@ class Api
             CURLOPT_POST       => true,
             CURLOPT_POSTFIELDS => $data,
         );
-        return $exec = $this->execute($url, $opts);
+        return $exec = $this->execute($url, $opts,$params);
         // return $this->handle($url,"POST",$data);
     }
-    public function put($methodURl = '', $data = [])
+    public function put($url = '', $data = [],$params=[])
     {
-        $parse_url = parse_url($methodURl);
-        if (!isset($parse_url["scheme"])) {
-            $url = $this->base_ws . $methodURl;
-        }
-        $this->setHeader('Content-Type', 'application/json');
+        $this->setHeader('content-type', 'application/json');
         $body = json_encode($data);
         $opts = array(
             CURLOPT_CUSTOMREQUEST => "PUT",
             CURLOPT_POSTFIELDS    => $body,
         );
-
-        $exec = $this->execute($url, $opts);
+        
+        $exec = $this->execute($url, $opts,$params);
         return $exec;
     }
 
@@ -150,20 +147,28 @@ class Api
      * @param array $opts
      * @return mixed
      */
-    public function execute($uri, $opts = array())
+    public function execute($uri, $opts = array(),$params=[])
     {
+        if (!empty($params)) {
+            $uri = $this->buildUrl($uri,$params);
+        }
+        $parse_url = parse_url($uri);
+        if (!isset($parse_url["scheme"])) {
+            $uri = $this->base_ws . $uri;
+        }
         $curl = curl_init($uri);
         curl_setopt_array($curl, $this->curl_opts_default);
-
         curl_setopt($curl, CURLOPT_HTTPHEADER, $this->formatHeaders());
-
         if (!empty($opts)) {
             curl_setopt_array($curl, $opts);
         }
 
         $return             = curl_exec($curl);
         $this->lastHttpCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-
+        $err = curl_error($curl);
+        if ($err) {
+            throw new \Exception("Exception CURL: ".$err, -5);
+        }
         curl_close($curl);
 
         return $this->builResponse($return);

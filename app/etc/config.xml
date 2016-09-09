@@ -7,47 +7,23 @@
     </global>
     <db>
     	<default>
-    		<![CDATA[yaxaws]]>
+    		<![CDATA[principal]]>
     	</default>
     	<connections>
-    		<yaxaws>
-    			<host><![CDATA[yaxadbmagento.intra]]></host>
+    		<principal>
+    			<host><![CDATA[host]]></host>
     			<port><![CDATA[3306]]></port>
-    			<dbname><![CDATA[yaxaco_yaxaws]]></dbname>		
-                <username><![CDATA[jdelgado]]></username>
-                <password><![CDATA[1qaz2wsx]]></password>
-    		</yaxaws>
-    		<mc2>
-    			<host><![CDATA[127.0.0.1]]></host>
-    			<port><![CDATA[3306]]></port>
-    			<dbname><![CDATA[mc2.1]]></dbname>		
-                <username><![CDATA[root]]></username>
-                <password><![CDATA[1234qwas]]></password>
-    		</mc2>
-            <mc2.1>
-                <host><![CDATA[127.0.0.1]]></host>
-                <port><![CDATA[3306]]></port>
-                <dbname><![CDATA[magento2]]></dbname>      
-                <username><![CDATA[root]]></username>
-                <password><![CDATA[1234qwas]]></password>
-            </mc2.1>
+    			<dbname><![CDATA[db]]></dbname>		
+                <username><![CDATA[user]]></username>
+                <password><![CDATA[pass]]></password>
+    		</principal>
             <test>
                 <host><![CDATA[127.0.0.1]]></host>
                 <port><![CDATA[3306]]></port>
                 <dbname><![CDATA[test]]></dbname>      
                 <username><![CDATA[root]]></username>
-                <password><![CDATA[1234qwas]]></password>
+                <password><![CDATA[123]]></password>
             </test>
     	</connections>
     </db>
-    <magento>
-        <ATTR_SET_CONFIGURABLE_ID>9</ATTR_SET_CONFIGURABLE_ID>
-        <ATTR_SET_GROUP_CONFIGURABLE_ID>30</ATTR_SET_GROUP_CONFIGURABLE_ID>
-        <DOMAIN_MC2>http://172.17.11.103:80/mc2.1</DOMAIN_MC2>
-        <!-- <USER_API_MC2>dev</USER_API_MC2>
-        <PASS_API_MC2>1q2w3e4r</PASS_API_MC2> -->
-        <USER_API_MC2>admin</USER_API_MC2>
-        <PASS_API_MC2>1234qwas</PASS_API_MC2>
-        <PREFIX_PAGE_PRODUCT>.html</PREFIX_PAGE_PRODUCT>
-    </magento>
 </config>

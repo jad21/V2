@@ -10,7 +10,7 @@ abstract class Logger
         if(is_file($file)){
             $bool = file_put_contents($file, date('Y-m-d H:i:s').' ' . $prefix . ' : ' . $message . PHP_EOL, FILE_APPEND | LOCK_EX);
         }else{
-            $bool = file_put_contents($file, date('Y-m-d H:i:s').' ' . $prefix .' : ' . $message);
+            $bool = file_put_contents($file, date('Y-m-d H:i:s').' ' . $prefix .' : ' . $message . PHP_EOL);
         }
         if (!$bool) {
             $error = error_get_last();

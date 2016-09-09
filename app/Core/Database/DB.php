@@ -93,8 +93,8 @@ class DB {
                     }
                     // dd($query,$parameters);
                     // Add type when binding the values to the column
-                    // $this->PDOstatement->bindValue($value[0], $value[1], $type);
-                    $this->PDOstatement->bindParam($value[0], $value[1],$type);
+                    $this->PDOstatement->bindValue($value[0], $value[1], $type);
+                    // $this->PDOstatement->bindParam($value[0], $value[1],$type);
                 }
             }
             
