@@ -10,8 +10,12 @@ class Env
 	{
 		self::$setting = $this->getDataFile();
 	}
-	public static function getData()
+	public static function getData($file=null)
 	{
+		if (is_not_null($file)) {
+			$this->configfile = CONFIG_DIRECTORY . $file;
+			return $this->getDataFile();
+		}
 		if (empty(self::$setting) OR is_null(self::$setting)) {
 			new self;
 		}

@@ -1,8 +1,11 @@
 <?php
+
 namespace App\Core\Controllers;
 use App\Core\Views\View;
 class ControllerCore
 {
+	protected $parameters = [];
+
 	public function __construct()
 	{
 		# code...
@@ -21,5 +24,13 @@ class ControllerCore
 	{
 		header('HTTP/1.1 500 Error Server');
 		return $value;
+	}
+	public function setParameters($parameters)
+	{
+		$this->parameters = $parameters;
+	}
+	public function getParameters()
+	{
+		return $this->parameters;	
 	}
 }

@@ -2,6 +2,7 @@
 
 use App\Core\Utils\Collection;
 use App\Core\Utils\Env;
+use App\Core\Utils\Result;
 if (!function_exists('data_get')) {
     /**
      * Get an item from an array or object using "dot" notation.
@@ -182,3 +183,29 @@ if (!function_exists('value')) {
         return $arg;
     }
 }
+if (!function_exists('is_not_null')) {
+    function is_not_null($val)
+    {
+        return !is_null($val);
+    }
+}
+if (!function_exists('je')) {
+    function je($val)
+    {
+        return json_encode($val);
+    }
+}
+if (!function_exists('jd')) {
+    function jd($val)
+    {
+        return json_decode($val);
+    }
+}
+
+if (!function_exists('result')) {
+    function result()
+    {
+        return new Result();
+    }
+}
+

@@ -1,5 +1,4 @@
 <?php
-
 class ErrorHandler extends Exception {
     protected $severity;
     

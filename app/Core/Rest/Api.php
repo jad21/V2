@@ -70,6 +70,8 @@ class Api
         $parse_url = parse_url($methodURl);
         if (!isset($parse_url["scheme"])) {
             $url = $this->base_ws . $methodURl;
+        }else{
+            $url = $methodURl;
         }
         if($requestType == self::ENCODING_JSON){
         	$this->setHeader('Content-Type', 'application/json');
@@ -82,9 +84,11 @@ class Api
         return $exec = $this->execute($url, $opts,$params);
         // return $this->handle($url,"POST",$data);
     }
-    public function put($url = '', $data = [],$params=[])
+    public function put($url = '', $data = [],$params=[],$requestType = self::ENCODING_JSON)
     {
-        $this->setHeader('content-type', 'application/json');
+        if($requestType == self::ENCODING_JSON){
+            $this->setHeader('Content-Type', 'application/json');
+        }
         $body = json_encode($data);
         $opts = array(
             CURLOPT_CUSTOMREQUEST => "PUT",

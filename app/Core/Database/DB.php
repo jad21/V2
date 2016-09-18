@@ -104,7 +104,7 @@ class DB {
             $this->parameters = array();
         }
         catch (PDOException $e) {
-            throw new Exception($e->getMessage(). " \ntrace: " .$e->getTraceAsString(), -3);
+            throw new Exception("sql:{$query}.\n ".$e->getMessage(). " \ntrace: \n" .$e->getTraceAsString(), -3);
         }
         
     }  
