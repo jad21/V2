@@ -1,4 +1,3 @@
-# V2
-Project PHP psr-4
+# V2_bitgo
 #Install:
   composer install

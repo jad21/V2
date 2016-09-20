@@ -1,6 +1,6 @@
 <?php
 namespace App\Commands;
-use App\Core\Logs\Logger;
+use V2\Core\Logs\Logger;
 use Symfony\Component\Console\Command\Command as base;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;

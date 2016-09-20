@@ -7,16 +7,16 @@
     </global>
     <db>
     	<default>
-    		<![CDATA[principal]]>
+    		<![CDATA[bitinkaws]]>
     	</default>
     	<connections>
-    		<principal>
-    			<host><![CDATA[host]]></host>
+    		<bitinkaws>
+    			<host><![CDATA[127.0.0.1]]></host>
     			<port><![CDATA[3306]]></port>
-    			<dbname><![CDATA[db]]></dbname>		
-                <username><![CDATA[user]]></username>
-                <password><![CDATA[pass]]></password>
-    		</principal>
+    			<dbname><![CDATA[bitinkaws]]></dbname>		
+                <username><![CDATA[root]]></username>
+                <password><![CDATA[root]]></password>
+    		</bitinkaws>
             <test>
                 <host><![CDATA[127.0.0.1]]></host>
                 <port><![CDATA[3306]]></port>
@@ -26,4 +26,12 @@
             </test>
     	</connections>
     </db>
+    <mail>
+        <smtp>
+            <Host>smtp.gmail.com</Host>
+            <Username>bitgobitinka@gmail.com</Username>
+            <Password>bitinka2016</Password>
+            <Port>587</Port>
+        </smtp>
+    </mail>
 </config>

@@ -1,0 +1,10 @@
+{
+	"testdev":{
+		"name":"bitinka test",
+		"email":"bitgobitinka@gmail.com",
+		"password":"bitinka2016$$",
+		"wallet":"2N32RfhpKGQQQbcpCVrsWhgSz5DUKBhNKfS",
+		"token":"f78425f2aac283444f8529068521ab338235a4a8f19336702b1ca4af10380a96",
+		"type_account":"TEST"
+	}
+}
