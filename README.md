@@ -1,3 +1,3 @@
-# V2_bitgo
+# V2
 #Install:
   composer install
