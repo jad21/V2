@@ -15,7 +15,7 @@ authors: Jose Angel Delgado <esojangel@gmail.com>
 # Getting Started
 
   V2 es modular, por lo que cada desarrollo se tiene que considerar como la creacion de un modulo.
- El patro de desarrollo es el seguiente:
+ El patro de diseño es el seguiente:
 
 > Para entorno web `
 [ Models|Herpels ] => Services => Controllers.`
