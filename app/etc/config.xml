@@ -7,30 +7,30 @@
     </global>
     <db>
     	<default>
-    		<![CDATA[bitinkaws]]>
+    		<![CDATA[mysql]]>
     	</default>
     	<connections>
-    		<bitinkaws>
+    		<mysql>
     			<host><![CDATA[127.0.0.1]]></host>
     			<port><![CDATA[3306]]></port>
-    			<dbname><![CDATA[bitinkaws]]></dbname>		
-                <username><![CDATA[root]]></username>
-                <password><![CDATA[root]]></password>
-    		</bitinkaws>
+    			<dbname><![CDATA[database]]></dbname>		
+                <username><![CDATA[user]]></username>
+                <password><![CDATA[pass]]></password>
+    		</mysql>
             <test>
                 <host><![CDATA[127.0.0.1]]></host>
                 <port><![CDATA[3306]]></port>
                 <dbname><![CDATA[test]]></dbname>      
                 <username><![CDATA[root]]></username>
-                <password><![CDATA[123]]></password>
+                <password><![CDATA[root]]></password>
             </test>
     	</connections>
     </db>
     <mail>
         <smtp>
             <Host>smtp.gmail.com</Host>
-            <Username>bitgobitinka@gmail.com</Username>
-            <Password>bitinka2016</Password>
+            <Username>correo@gmail.com</Username>
+            <Password>pass</Password>
             <Port>587</Port>
         </smtp>
     </mail>
