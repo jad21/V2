@@ -55,6 +55,7 @@ abstract class Command extends base
     	}
     	return null;
     }
+    
     public function option($arg)
     {   
         if ($this->_input->hasOption($arg)) {

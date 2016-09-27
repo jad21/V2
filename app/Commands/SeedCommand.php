@@ -20,7 +20,6 @@ class SeedCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         // outputs multiple lines to the console (adding "\n" at the end of each line)
-        dd(PHP_EOL);
         $output->writeln([
             'User Creator',
             '============',

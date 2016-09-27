@@ -9,7 +9,7 @@ define('VIEW_DIRECTORY', SERVER_ROOT . 'app' . DS . 'views' . DS);
 define('VAR_DIRECTORY', SERVER_ROOT . 'app' . DS . 'var' . DS);
 define('LOGS_DIRECTORY', VAR_DIRECTORY . 'logs' . DS);
 define('REMOTE_IP', isset($_SERVER['REMOTE_ADDR'])?$_SERVER['REMOTE_ADDR']:"127.0.0.1");
-define('MODULE_MAIN', "Bitgo");
+define('MODULE_MAIN', "Main");
 define('CTRL_MAIN', "Main");
 
 

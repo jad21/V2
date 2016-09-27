@@ -1,27 +1,10 @@
 #!/usr/bin/env php
-<?php
+<?php 
+/**
+ * 	 Ejecutable de los comandos
+ *	@author Jose Angel Delgado <esojangel@gmail.com>
+ */
+require __DIR__."/../etc/kernel.php";
 
-require "../etc/kernel.php";
-use Symfony\Component\Console\Application;
-use V2\Core\Logs\Logger;
-
-try {
-	$app = new Application("App Console <autor: Jose Angel Delgado>", "0.1");
-
-	// ... register commands
-	$list_commands = [
-		"App\Commands\SeedCommand",
-	];
-	foreach ($list_commands as $class) {
-		if (class_exists($class)) {
-			$app->add(new $class);
-		}
-	}
-
-	$app->run();
-} catch (Exception $e) {
-    $errorString = "\n".$e->getTraceAsString();
-    echo $errorString;
-    Logger::error($errorString,"error_fatal");
-}
+\V2\Core\Commands\Console::make();
 

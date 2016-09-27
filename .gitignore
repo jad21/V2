@@ -1,3 +1,5 @@
 *.sublime-workspace
 /vendor
+/node_modules
 *.lock
+*.log
