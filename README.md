@@ -1,6 +1,6 @@
 ---
 title: V2
-authors: Jose Angel Delgado <jose.delgado@gmail.com>
+authors: Jose Angel Delgado <esojangel@gmail.com>
 
 # Overview
   V2 es un microframework basado en el psr-4 de php. Dirigido a la creación de api y comandos de consola.
