@@ -1,6 +1,3 @@
-# V2
-#Install:
-  composer install
 ---
 title: V2
 authors: Jose Angel Delgado <jose.delgado@gmail.com>
