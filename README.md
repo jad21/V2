@@ -1,6 +1,3 @@
-# V2
-#Install:
-  composer install
 ---
 title: V2
 authors: Jose Angel Delgado <jose.delgado@gmail.com>
@@ -104,12 +101,12 @@ tambien se pueden hacer archivos de configuracion en formato json
 
   `module/controller/method`
 
-  ### example:
+### example:
 
 ```shell
 curl -X GET http://127.0.0.1/V2/main/trans/index
 ```
-  ### response
+### response
 ```json
 {
   "response": "Hola Yaxa"
