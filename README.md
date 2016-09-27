@@ -9,6 +9,7 @@ authors: Jose Angel Delgado <jose.delgado@gmail.com>
 
 * `git clone https://github.com/jad/V2.git`
 * `cd V2 && composer install`
+
 > NOTA: dar permisos de escritura a app/var/logs
 
 # Getting Started
